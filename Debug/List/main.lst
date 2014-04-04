@@ -1,6 +1,6 @@
 ###############################################################################
 #                                                                             #
-# IAR C/C++ Compiler V5.60.5.50814/W32 for MSP430       03/Apr/2014  13:20:43 #
+# IAR C/C++ Compiler V5.60.5.50814/W32 for MSP430       04/Apr/2014  00:08:47 #
 # Copyright 1996-2013 IAR Systems AB.                                         #
 #                                                                             #
 #    __rt_version  =  3                                                       #
@@ -10,27 +10,26 @@
 #    __pic         =  no                                                      #
 #    __core        =  430X                                                    #
 #    __data_model  =  small                                                   #
-#    Source file   =  C:\Users\Nathan\Documents\GitHub\ece306-gps-receiver\ma #
-#                     in.c                                                    #
-#    Command line  =  C:\Users\Nathan\Documents\GitHub\ece306-gps-receiver\ma #
-#                     in.c -lC C:\Users\Nathan\Documents\GitHub\ece306-gps-re #
-#                     ceiver\Debug\List\ -o C:\Users\Nathan\Documents\GitHub\ #
-#                     ece306-gps-receiver\Debug\Obj\ --no_cse --no_unroll     #
-#                     --no_inline --no_code_motion --no_tbaa --debug          #
-#                     -D__MSP430FR5739__ -e --double=32 --dlib_config         #
-#                     "C:\Program Files (x86)\IAR Systems\Embedded Workbench  #
+#    Source file   =  C:\Users\Nathan\Documents\GitHub\ece-306-HW9\main.c     #
+#    Command line  =  C:\Users\Nathan\Documents\GitHub\ece-306-HW9\main.c     #
+#                     -lC C:\Users\Nathan\Documents\GitHub\ece-306-HW9\Debug\ #
+#                     List\ -o C:\Users\Nathan\Documents\GitHub\ece-306-HW9\D #
+#                     ebug\Obj\ --no_cse --no_unroll --no_inline              #
+#                     --no_code_motion --no_tbaa --debug -D__MSP430FR5739__   #
+#                     -e --double=32 --dlib_config "C:\Program Files          #
+#                     (x86)\IAR Systems\Embedded Workbench                    #
 #                     6.5\430\LIB\DLIB\dl430xsfn.h" --core=430X               #
 #                     --data_model=small -Ol --multiplier=32                  #
 #                     --multiplier_location=4C0 --hw_workaround=CPU40         #
-#    List file     =  C:\Users\Nathan\Documents\GitHub\ece306-gps-receiver\De #
-#                     bug\List\main.lst                                       #
-#    Object file   =  C:\Users\Nathan\Documents\GitHub\ece306-gps-receiver\De #
-#                     bug\Obj\main.r43                                        #
+#    List file     =  C:\Users\Nathan\Documents\GitHub\ece-306-HW9\Debug\List #
+#                     \main.lst                                               #
+#    Object file   =  C:\Users\Nathan\Documents\GitHub\ece-306-HW9\Debug\Obj\ #
+#                     main.r43                                                #
 #                                                                             #
 #                                                                             #
 ###############################################################################
 
-C:\Users\Nathan\Documents\GitHub\ece306-gps-receiver\main.c
+C:\Users\Nathan\Documents\GitHub\ece-306-HW9\main.c
       1          /******************************************************************************
       2          Main
       3          
@@ -105,88 +104,73 @@ C:\Users\Nathan\Documents\GitHub\ece306-gps-receiver\main.c
    \   000010   8243....     MOV.W   #0x0, &TimeMsec
      45          	Init_Timers(); 				// Initialize Timers
    \   000014   ........     CALLA   #Init_Timers
-     46          	Init_LCD();				// Initialize LCD     
+     46          	Init_LCD();				// Initialize LCD    
    \   000018   ........     CALLA   #Init_LCD
-     47          	init_gps();
-   \   00001C   ........     CALLA   #init_gps
+     47                  
      48                  
-     49                  
-     50                  
-     51          	//          "0123456789abcdef"
-     52          	display_1 = "   Project  7   ";
-   \   000020   B240........ MOV.W   #`?<Constant "   Project  7   ">`, &display_1
-     53          	display_2 = "                ";
-   \   000026   B240........ MOV.W   #`?<Constant "                ">`, &display_2
-     54          	Display_Process();
-   \   00002C   ........     CALLA   #Display_Process
-   \   000030   123C         JMP     ??main_1
-     55          	
-     56          /* ---------- Begining of the "While" Operating System ------------- */
-     57          	while(ALWAYS) 										// Can the Operating system run
-     58          	{                            
-     59          		if(TimeMsec % EVERY_50 == RESET_TIME)
-     60                          {
-     61                                  GpsPacketChk();
-     62                            
-     63                                  for(int i = 0; i < DISPLAY_SIZE; i++)
-     64                                  {
-     65                                      display_1[i] = Lat[i];
+     49          	//          "0123456789abcdef"
+     50          	display_1 = "   Homework 9   ";
+   \   00001C   B240........ MOV.W   #`?<Constant "   Homework 9   ">`, &display_1
+     51          	display_2 = "                ";
+   \   000022   B240........ MOV.W   #`?<Constant "                ">`, &display_2
+     52          	Display_Process();
+   \   000028   ........     CALLA   #Display_Process
+     53          	
+     54          /* ---------- Begining of the "While" Operating System ------------- */
+     55          	while(ALWAYS) 										// Can the Operating system run
+     56          	{                            
+     57                          ADC_Process();
    \                     ??main_0:
-   \   000032   1E42....     MOV.W   &display_1, R14
-   \   000036   0E5F         ADD.W   R15, R14
-   \   000038   DE4F....0000 MOV.B   Lat(R15), 0(R14)
-     66                                      display_2[i] = Lon[i];
-   \   00003E   1E42....     MOV.W   &display_2, R14
-   \   000042   0E5F         ADD.W   R15, R14
-   \   000044   DE4F....0000 MOV.B   Lon(R15), 0(R14)
-     67                                  }
-   \   00004A   1F53         ADD.W   #0x1, R15
-   \                     ??main_2:
-   \   00004C   3F901000     CMP.W   #0x10, R15
-   \   000050   F03B         JL      ??main_0
-     68                                  Display_Process();
-   \   000052   ........     CALLA   #Display_Process
-   \                     ??main_1:
-   \   000056   1C42....     MOV.W   &TimeMsec, R12
-   \   00005A   3E403200     MOV.W   #0x32, R14
-   \   00005E   ........     CALLA   #?DivMod16u
-   \   000062   0E93         CMP.W   #0x0, R14
-   \   000064   F823         JNE     ??main_1
-   \   000066   ........     CALLA   #GpsPacketChk
-   \   00006A   0F43         MOV.W   #0x0, R15
-   \   00006C   EF3F         JMP     ??main_2
-   \   00006E   0343         NOP
-     69                          }	
-     70          	}
-     71          }
+   \   00002C   ........     CALLA   #ADC_Process
+     58                          Control_Process();
+   \   000030   ........     CALLA   #Control_Process
+     59                          Menu_Process();
+   \   000034   ........     CALLA   #Menu_Process
+     60                          
+     61                    
+     62                          if(TimeMsec % EVERY_50 == RESET_TIME)
+   \   000038   1C42....     MOV.W   &TimeMsec, R12
+   \   00003C   3E403200     MOV.W   #0x32, R14
+   \   000040   ........     CALLA   #?DivMod16u
+   \   000044   0E93         CMP.W   #0x0, R14
+   \   000046   F223         JNE     ??main_0
+     63                          {
+     64                                  Display_Process();
+   \   000048   ........     CALLA   #Display_Process
+   \   00004C   EF3F         JMP     ??main_0
+   \   00004E   0343         NOP
+     65                          }	
+     66          	}
+     67          }
 
    \                                 In  segment DATA16_C, align 1, align-sorted
-   \                     `?<Constant "   Project  7   ">`:
-   \   000000   20202050726F DC8 "   Project  7   "
-   \            6A6563742020
-   \            3720202000  
+   \                     `?<Constant "   Homework 9   ">`:
+   \   000000   202020486F6D DC8 "   Homework 9   "
+   \            65776F726B20
+   \            3920202000  
 
    \                                 In  segment DATA16_C, align 1, align-sorted
    \                     `?<Constant "                ">`:
    \   000000   202020202020 DC8 "                "
    \            202020202020
    \            2020202000  
-     72          
+     68          
 
    Maximum stack usage in bytes:
 
    CSTACK Function
    ------ --------
       4   main
+        4   -> ADC_Process
+        4   -> Control_Process
         4   -> Display_Process
-        4   -> GpsPacketChk
         4   -> Init_Clocks
         4   -> Init_Conditions
         4   -> Init_Interrupts
         4   -> Init_LCD
         4   -> Init_Ports
         4   -> Init_Timers
-        4   -> init_gps
+        4   -> Menu_Process
 
 
    Segment part sizes:
@@ -194,21 +178,21 @@ C:\Users\Nathan\Documents\GitHub\ece306-gps-receiver\main.c
    Bytes  Function/Label
    -----  --------------
       17  ?<Constant "                ">
-      17  ?<Constant "   Project  7   ">
+      17  ?<Constant "   Homework 9   ">
        2  Time_Sequence
        3  control_state
        1  led_smclk
-     112  main
+      80  main
        1  one_time
 
  
- 112 bytes in segment CODE
-  34 bytes in segment DATA16_C
-   7 bytes in segment DATA16_Z
+ 80 bytes in segment CODE
+ 34 bytes in segment DATA16_C
+  7 bytes in segment DATA16_Z
  
- 112 bytes of CODE  memory
-  34 bytes of CONST memory
-   7 bytes of DATA  memory
+ 80 bytes of CODE  memory
+ 34 bytes of CONST memory
+  7 bytes of DATA  memory
 
 Errors: none
 Warnings: none

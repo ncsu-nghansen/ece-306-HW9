@@ -6,6 +6,9 @@ volatile int ADC_Thumb = 0;
 volatile int ADC_LeftIR = 0; 
 volatile int ADC_RightIR = 0;
 
+volatile int OldThumb = 0;
+volatile int ScrollIndex = 0;
+
 int AdcChannel = ADC10INCH_0;
 
 /** 
@@ -29,7 +32,7 @@ __interrupt void ADC10_ISR(void)
 		case 10: break; // ADC10IN
 		case 12:
                   
-                        ADC10CTL0 &= ~ADC10ENC;
+			ADC10CTL0 &= ~ADC10ENC;
 				
 			switch(AdcChannel)//Put an incrementing break statement to update different channels in turn
 			{

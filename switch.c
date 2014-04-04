@@ -23,7 +23,7 @@ __interrupt void Port_4(void)
 		
 		if(DebounceTimer == 0)
 		{
-			writeUsb('Q');
+			MenuSelect();
 			DebounceTimer = 100;
 		}
 	}
@@ -34,7 +34,7 @@ __interrupt void Port_4(void)
 		
 		if(DebounceTimer == 0)
 		{
-			writeSerial('Q');
+			MenuQuit();
 			DebounceTimer = 100;
 		}
 	}		

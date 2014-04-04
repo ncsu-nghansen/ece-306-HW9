@@ -43,28 +43,24 @@ void main(void)
 	  
 	TimeMsec = RESET_TIME;
 	Init_Timers(); 				// Initialize Timers
-	Init_LCD();				// Initialize LCD     
-	init_gps();
-        
+	Init_LCD();				// Initialize LCD    
         
         
 	//          "0123456789abcdef"
-	display_1 = "   Project  7   ";
+	display_1 = "   Homework 9   ";
 	display_2 = "                ";
 	Display_Process();
 	
 /* ---------- Begining of the "While" Operating System ------------- */
 	while(ALWAYS) 										// Can the Operating system run
 	{                            
-		if(TimeMsec % EVERY_50 == RESET_TIME)
+                ADC_Process();
+                Control_Process();
+                Menu_Process();
+                
+          
+                if(TimeMsec % EVERY_50 == RESET_TIME)
                 {
-                        GpsPacketChk();
-                  
-                        for(int i = 0; i < DISPLAY_SIZE; i++)
-                        {
-                            display_1[i] = Lat[i];
-                            display_2[i] = Lon[i];
-                        }
                         Display_Process();
                 }	
 	}

@@ -1,6 +1,6 @@
 ###############################################################################
 #                                                                             #
-# IAR C/C++ Compiler V5.60.5.50814/W32 for MSP430       03/Apr/2014  00:02:40 #
+# IAR C/C++ Compiler V5.60.5.50814/W32 for MSP430       04/Apr/2014  00:03:51 #
 # Copyright 1996-2013 IAR Systems AB.                                         #
 #                                                                             #
 #    __rt_version  =  3                                                       #
@@ -10,27 +10,26 @@
 #    __pic         =  no                                                      #
 #    __core        =  430X                                                    #
 #    __data_model  =  small                                                   #
-#    Source file   =  C:\Users\Nathan\Documents\GitHub\ece306-gps-receiver\sw #
-#                     itch.c                                                  #
-#    Command line  =  C:\Users\Nathan\Documents\GitHub\ece306-gps-receiver\sw #
-#                     itch.c -lC C:\Users\Nathan\Documents\GitHub\ece306-gps- #
-#                     receiver\Debug\List\ -o C:\Users\Nathan\Documents\GitHu #
-#                     b\ece306-gps-receiver\Debug\Obj\ --no_cse --no_unroll   #
-#                     --no_inline --no_code_motion --no_tbaa --debug          #
-#                     -D__MSP430FR5739__ -e --double=32 --dlib_config         #
-#                     "C:\Program Files (x86)\IAR Systems\Embedded Workbench  #
+#    Source file   =  C:\Users\Nathan\Documents\GitHub\ece-306-HW9\switch.c   #
+#    Command line  =  C:\Users\Nathan\Documents\GitHub\ece-306-HW9\switch.c   #
+#                     -lC C:\Users\Nathan\Documents\GitHub\ece-306-HW9\Debug\ #
+#                     List\ -o C:\Users\Nathan\Documents\GitHub\ece-306-HW9\D #
+#                     ebug\Obj\ --no_cse --no_unroll --no_inline              #
+#                     --no_code_motion --no_tbaa --debug -D__MSP430FR5739__   #
+#                     -e --double=32 --dlib_config "C:\Program Files          #
+#                     (x86)\IAR Systems\Embedded Workbench                    #
 #                     6.5\430\LIB\DLIB\dl430xsfn.h" --core=430X               #
 #                     --data_model=small -Ol --multiplier=32                  #
 #                     --multiplier_location=4C0 --hw_workaround=CPU40         #
-#    List file     =  C:\Users\Nathan\Documents\GitHub\ece306-gps-receiver\De #
-#                     bug\List\switch.lst                                     #
-#    Object file   =  C:\Users\Nathan\Documents\GitHub\ece306-gps-receiver\De #
-#                     bug\Obj\switch.r43                                      #
+#    List file     =  C:\Users\Nathan\Documents\GitHub\ece-306-HW9\Debug\List #
+#                     \switch.lst                                             #
+#    Object file   =  C:\Users\Nathan\Documents\GitHub\ece-306-HW9\Debug\Obj\ #
+#                     switch.r43                                              #
 #                                                                             #
 #                                                                             #
 ###############################################################################
 
-C:\Users\Nathan\Documents\GitHub\ece306-gps-receiver\switch.c
+C:\Users\Nathan\Documents\GitHub\ece-306-HW9\switch.c
       1          /******************************************************************************
       2          Switch Configurations
       3          
@@ -66,47 +65,45 @@ C:\Users\Nathan\Documents\GitHub\ece306-gps-receiver\switch.c
    \   000000   3F15         PUSHM.W #0x4, R15
      20          	if(P4IFG & SW1)
    \   000002   D2B33D02     BIT.B   #0x1, &0x23d
-   \   000006   0C28         JNC     ??Port_4_0
+   \   000006   0A28         JNC     ??Port_4_0
      21          	{
      22          		P4IFG &= ~SW1;
    \   000008   D2C33D02     BIC.B   #0x1, &0x23d
      23          		
      24          		if(DebounceTimer == 0)
    \   00000C   8293....     CMP.W   #0x0, &DebounceTimer
-   \   000010   0720         JNE     ??Port_4_0
+   \   000010   0520         JNE     ??Port_4_0
      25          		{
-     26          			writeUsb('Q');
-   \   000012   7C405100     MOV.B   #0x51, R12
-   \   000016   ........     CALLA   #writeUsb
+     26          			MenuSelect();
+   \   000012   ........     CALLA   #MenuSelect
      27          			DebounceTimer = 100;
-   \   00001A   B2406400.... MOV.W   #0x64, &DebounceTimer
+   \   000016   B2406400.... MOV.W   #0x64, &DebounceTimer
      28          		}
      29          	}
      30          			
      31          	if(P4IFG & SW2)
    \                     ??Port_4_0:
-   \   000020   E2B33D02     BIT.B   #0x2, &0x23d
-   \   000024   0C28         JNC     ??Port_4_1
+   \   00001C   E2B33D02     BIT.B   #0x2, &0x23d
+   \   000020   0A28         JNC     ??Port_4_1
      32          	{
      33          		P4IFG &= ~SW2;
-   \   000026   E2C33D02     BIC.B   #0x2, &0x23d
+   \   000022   E2C33D02     BIC.B   #0x2, &0x23d
      34          		
      35          		if(DebounceTimer == 0)
-   \   00002A   8293....     CMP.W   #0x0, &DebounceTimer
-   \   00002E   0720         JNE     ??Port_4_1
+   \   000026   8293....     CMP.W   #0x0, &DebounceTimer
+   \   00002A   0520         JNE     ??Port_4_1
      36          		{
-     37          			writeSerial('Q');
-   \   000030   7C405100     MOV.B   #0x51, R12
-   \   000034   ........     CALLA   #writeSerial
+     37          			MenuQuit();
+   \   00002C   ........     CALLA   #MenuQuit
      38          			DebounceTimer = 100;
-   \   000038   B2406400.... MOV.W   #0x64, &DebounceTimer
+   \   000030   B2406400.... MOV.W   #0x64, &DebounceTimer
      39          		}
      40          	}		
      41          }
    \                     ??Port_4_1:
-   \   00003E   3C17         POPM.W  #0x4, R15
-   \   000040   0013         RETI
-   \   000042                REQUIRE _A_PBIFG_L
+   \   000036   3C17         POPM.W  #0x4, R15
+   \   000038   0013         RETI
+   \   00003A                REQUIRE _A_PBIFG_L
      42          
      43          //Switches_Process
      44          //DESC: Detects switch toggle (press & release) by polling current states
@@ -185,8 +182,8 @@ C:\Users\Nathan\Documents\GitHub\ece306-gps-receiver\switch.c
    CSTACK Function
    ------ --------
      12   Port_4
-       12   -> writeSerial
-       12   -> writeUsb
+       12   -> MenuQuit
+       12   -> MenuSelect
       4   Switches_Process
         4   -> isPressed
       4   isPressed
@@ -197,7 +194,7 @@ C:\Users\Nathan\Documents\GitHub\ece306-gps-receiver\switch.c
    Bytes  Function/Label
    -----  --------------
        2  ??Port_4??INTVEC 64
-      66  Port_4
+      58  Port_4
       32  Switches_Process
        2  _A_PBIFG_L
        2  _A_PBIN_L
@@ -207,9 +204,9 @@ C:\Users\Nathan\Documents\GitHub\ece306-gps-receiver\switch.c
  58 bytes in segment CODE
   4 bytes in segment DATA16_AN
   2 bytes in segment INTVEC
- 66 bytes in segment ISR_CODE
+ 58 bytes in segment ISR_CODE
  
- 124 bytes of CODE  memory
+ 116 bytes of CODE  memory
    0 bytes of CONST memory (+ 2 bytes shared)
    0 bytes of DATA  memory (+ 4 bytes shared)
 

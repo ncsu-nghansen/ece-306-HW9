@@ -40,7 +40,7 @@ __interrupt void USCI_A1_ISR(void)
 			break;
 		case 2: // Vector 2 - RXIFG			
 			SerialRx[serialRx_W++] = UCA1RXBUF;
-                        writeUsb(UCA1RXBUF); //Echo to COM
+                        //writeUsb(UCA1RXBUF); //Echo to COM
 			serialRx_W %= sizeof SerialRx;
 			break;
 		case 4: // Vector 4 – TXIFG
