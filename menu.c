@@ -157,7 +157,7 @@ void SongMenu(void)
         ScrollIndex++;
       
       OldThumb = ADC_Thumb;
-      ScrollIndex %= sizeof Song;
+      ScrollIndex %= (sizeof Song - DISPLAY_SIZE);
     }
     
     if(TimeMsec % EVERY_50 == RESET_TIME)

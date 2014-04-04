@@ -7,7 +7,7 @@ Warning[w6]: Type conflict for external/entry "MotorTimer", in module motor_cont
 #                                                                              #
 #      IAR Universal Linker V5.7.0.39                                          #
 #                                                                              #
-#           Link time     =  04/Apr/2014  00:10:50                             #
+#           Link time     =  04/Apr/2014  00:31:20                             #
 #           Target CPU    =  MSP430                                            #
 #           List file     =  C:\Users\Nathan\Documents\GitHub\ece-306-HW9\Debu #
 #                            g\List\Homework_09.map                            #
@@ -153,7 +153,7 @@ adc ( C:\Users\Nathan\Documents\GitHub\ece-306-HW9\Debug\Obj\adc.r43 )
         ScrollIndex                         1CEA
         AdcChannel                          1CEC
         ADC10_ISR                           C4E0
-        ADC_Process                         CCAC
+        ADC_Process                         CCC4
         ADC10_ISR::??INTVEC 92              FFEC
         ?setjmp_save_r4                     NOT NEEDED
         ?setjmp_save_r5                     NOT NEEDED
@@ -181,7 +181,7 @@ clocks ( C:\Users\Nathan\Documents\GitHub\ece-306-HW9\Debug\Obj\clocks.r43 )
         _A_CSCTL2_L                         0164
         _A_CSCTL3_L                         0166
         _A_WDTCTL_L                         015C
-        Init_Clocks                         CB82
+        Init_Clocks                         CB9A
         ?setjmp_save_r4                     NOT NEEDED
         ?setjmp_save_r5                     NOT NEEDED
         CSCTL0                              0160
@@ -200,7 +200,7 @@ clocks ( C:\Users\Nathan\Documents\GitHub\ece-306-HW9\Debug\Obj\clocks.r43 )
         WDTCTL_H                            015D
         WDTCTL_L                            015C
 init ( C:\Users\Nathan\Documents\GitHub\ece-306-HW9\Debug\Obj\init.r43 )
-        Init_Conditions                     CD1A
+        Init_Conditions                     CD32
         ?setjmp_save_r4                     NOT NEEDED
         ?setjmp_save_r5                     NOT NEEDED
 interrupts ( C:\Users\Nathan\Documents\GitHub\ece-306-HW9\Debug\Obj\interrupts.r43 )
@@ -260,21 +260,21 @@ LCD ( C:\Users\Nathan\Documents\GitHub\ece-306-HW9\Debug\Obj\LCD.r43 )
         current_line                        1D02
         update_display_count                NOT NEEDED
         display_update_time                 NOT NEEDED
-        Init_SPI_B0                         CB16
-        SPI_B0_write                        CC60
-        spi_rs_data                         CCDE
-        spi_rs_command                      CCD6
-        spi_chipselect_idle                 CCE6
-        spi_chipselect_active               CCEE
-        spi_reset_idle                      CCF6
-        spi_reset_active                    CCCE
+        Init_SPI_B0                         CB2E
+        SPI_B0_write                        CC78
+        spi_rs_data                         CCF6
+        spi_rs_command                      CCEE
+        spi_chipselect_idle                 CCFE
+        spi_chipselect_active               CD06
+        spi_reset_idle                      CD0E
+        spi_reset_active                    CCE6
         Init_LCD                            C83A
-        lcd_write                           C9E0
+        lcd_write                           C9F8
         lcd_command                         NOT NEEDED
-        lcd_putc                            CA88
+        lcd_putc                            CAA0
         lcd_puts                            NOT NEEDED
-        lcd_out                             CB3C
-        Display_Process                     CC48
+        lcd_out                             CB54
+        Display_Process                     CC60
         ?setjmp_save_r4                     NOT NEEDED
         ?setjmp_save_r5                     NOT NEEDED
         PAOUT                               0202
@@ -297,7 +297,7 @@ main ( C:\Users\Nathan\Documents\GitHub\ece-306-HW9\Debug\Obj\main.r43 )
         Time_Sequence                       1CF4
         led_smclk                           NOT NEEDED
         one_time                            1D03
-        main                                C948
+        main                                C9A8
         ?setjmp_save_r4                     NOT NEEDED
         ?setjmp_save_r5                     NOT NEEDED
 menu ( C:\Users\Nathan\Documents\GitHub\ece-306-HW9\Debug\Obj\menu.r43 )
@@ -307,9 +307,9 @@ menu ( C:\Users\Nathan\Documents\GitHub\ece-306-HW9\Debug\Obj\menu.r43 )
         ResistorMenu                        C788
         ShapesMenu                          C5EE
         SongMenu                            C8C8
-        Menu_Process                        CAE8
-        MenuSelect                          CD04
-        MenuQuit                            CCFE
+        Menu_Process                        CB00
+        MenuSelect                          CD1C
+        MenuQuit                            CD16
         ?setjmp_save_r4                     NOT NEEDED
         ?setjmp_save_r5                     NOT NEEDED
 motor_control ( C:\Users\Nathan\Documents\GitHub\ece-306-HW9\Debug\Obj\motor_control.r43 )
@@ -353,12 +353,12 @@ ports ( C:\Users\Nathan\Documents\GitHub\ece-306-HW9\Debug\Obj\ports.r43 )
         _A_PJREN_L                          0326
         _A_PJSEL0_L                         032A
         _A_PJSEL1_L                         032C
-        Init_Ports                          CC74
-        Init_Port1                          CA54
-        Init_Port2                          CAB8
-        Init_Port3                          CBC6
-        Init_Port4                          CB60
-        Init_PortJ                          CBA4
+        Init_Ports                          CC8C
+        Init_Port1                          CA6C
+        Init_Port2                          CAD0
+        Init_Port3                          CBDE
+        Init_Port4                          CB78
+        Init_PortJ                          CBBC
         ?setjmp_save_r4                     NOT NEEDED
         ?setjmp_save_r5                     NOT NEEDED
         PAOUT                               0202
@@ -413,7 +413,7 @@ prgm_control ( C:\Users\Nathan\Documents\GitHub\ece-306-HW9\Debug\Obj\prgm_contr
         OldState                            NOT NEEDED
         IsLight                             NOT NEEDED
         WasLight                            NOT NEEDED
-        Control_Process                     C998
+        Control_Process                     C948
         ?setjmp_save_r4                     NOT NEEDED
         ?setjmp_save_r5                     NOT NEEDED
 switch ( C:\Users\Nathan\Documents\GitHub\ece-306-HW9\Debug\Obj\switch.r43 )
@@ -432,7 +432,7 @@ switch ( C:\Users\Nathan\Documents\GitHub\ece-306-HW9\Debug\Obj\switch.r43 )
         PBIFG_H                             023D
         PBIFG_L                             023C
 system ( C:\Users\Nathan\Documents\GitHub\ece-306-HW9\Debug\Obj\system.r43 )
-        enable_interrupts                   CD16
+        enable_interrupts                   CD2E
         ?setjmp_save_r4                     NOT NEEDED
         ?setjmp_save_r5                     NOT NEEDED
 timers ( C:\Users\Nathan\Documents\GitHub\ece-306-HW9\Debug\Obj\timers.r43 )
@@ -442,7 +442,7 @@ timers ( C:\Users\Nathan\Documents\GitHub\ece-306-HW9\Debug\Obj\timers.r43 )
         MotorTimer                          1CFC
         DebounceTimer                       1CFE
         Timer0_A0                           C580
-        Init_Timers                         CD12
+        Init_Timers                         CD2A
         waitMsec                            NOT NEEDED
         Timer0_A0::??INTVEC 90              FFEA
         ?setjmp_save_r4                     NOT NEEDED
@@ -461,10 +461,10 @@ timersB2 ( C:\Users\Nathan\Documents\GitHub\ece-306-HW9\Debug\Obj\timersB2.r43 )
         five_msec_count                     1D00
         sleeping                            NOT NEEDED
         sleeptime                           NOT NEEDED
-        Init_Timer_B2                       CBFE
+        Init_Timer_B2                       CC16
         measure_delay                       NOT NEEDED
-        usleep10                            CC18
-        five_msec_sleep                     CCBE
+        usleep10                            CC30
+        five_msec_sleep                     CCD6
         led_blink                           NOT NEEDED
         gps_resetting                       NOT NEEDED
         gps_2b_reset                        NOT NEEDED
@@ -480,15 +480,15 @@ timersB2 ( C:\Users\Nathan\Documents\GitHub\ece-306-HW9\Debug\Obj\timersB2.r43 )
 ?abort ( C:\Program Files (x86)\IAR Systems\Embedded Workbench 6.5\430\LIB\DLIB\dl430xsfn.r43 )
         abort                               NOT NEEDED
 ?__dbg_break ( C:\Program Files (x86)\IAR Systems\Embedded Workbench 6.5\430\LIB\DLIB\dl430xsfn.r43 )
-        __DebugBreak                        CD22
+        __DebugBreak                        CD3A
 ?__dwrite ( C:\Program Files (x86)\IAR Systems\Embedded Workbench 6.5\430\LIB\DLIB\dl430xsfn.r43 )
         __dwrite                            NOT NEEDED
 ?__exit ( C:\Program Files (x86)\IAR Systems\Embedded Workbench 6.5\430\LIB\DLIB\dl430xsfn.r43 )
-        __exit                              CC30
+        __exit                              CC48
 ?__write ( C:\Program Files (x86)\IAR Systems\Embedded Workbench 6.5\430\LIB\DLIB\dl430xsfn.r43 )
         __write                             NOT NEEDED
 ?_exit ( C:\Program Files (x86)\IAR Systems\Embedded Workbench 6.5\430\LIB\DLIB\dl430xsfn.r43 )
-        _exit                               CD1E
+        _exit                               CD36
         __cstart_call_dtors                 NOT NEEDED
         __cstart_closeall                   NOT NEEDED
         __cstart_clearlocks                 NOT NEEDED
@@ -516,22 +516,22 @@ lowinit ( C:\Program Files (x86)\IAR Systems\Embedded Workbench 6.5\430\LIB\DLIB
 ?reset_vector ( C:\Program Files (x86)\IAR Systems\Embedded Workbench 6.5\430\LIB\DLIB\dl430xsfn.r43 )
         ?reset_vector                       FFFE
 ?exit ( C:\Program Files (x86)\IAR Systems\Embedded Workbench 6.5\430\LIB\DLIB\dl430xsfn.r43 )
-        exit                                CD0A
+        exit                                CD22
 ?malloc ( C:\Program Files (x86)\IAR Systems\Embedded Workbench 6.5\430\LIB\DLIB\dl430xsfn.r43 )
         malloc                              NOT NEEDED
 ?DivMod816u ( C:\Program Files (x86)\IAR Systems\Embedded Workbench 6.5\430\LIB\DLIB\dl430xsfn.r43 )
-        ?DivMod8u                           CBE2
-        ?DivMod16u                          CBE6
+        ?DivMod8u                           CBFA
+        ?DivMod16u                          CBFE
 ?DivMod816s ( C:\Program Files (x86)\IAR Systems\Embedded Workbench 6.5\430\LIB\DLIB\dl430xsfn.r43 )
-        ?DivMod8s                           CA20
-        ?DivMod16s                          CA24
+        ?DivMod8s                           CA38
+        ?DivMod16s                          CA3C
 ?memcpy ( C:\Program Files (x86)\IAR Systems\Embedded Workbench 6.5\430\LIB\DLIB\dl430xsfn.r43 )
-        memcpy                              CC9A
+        memcpy                              CCB2
 ?memmove ( C:\Program Files (x86)\IAR Systems\Embedded Workbench 6.5\430\LIB\DLIB\dl430xsfn.r43 )
         memmove                             NOT NEEDED
 ?memzero ( C:\Program Files (x86)\IAR Systems\Embedded Workbench 6.5\430\LIB\DLIB\dl430xsfn.r43 )
-        __data16_memzero                    CC88
-        __data16_memcpy                     CD0E
+        __data16_memzero                    CCA0
+        __data16_memcpy                     CD26
         __data16_memmove                    NOT NEEDED
 ?setjmp ( C:\Program Files (x86)\IAR Systems\Embedded Workbench 6.5\430\LIB\DLIB\dl430xsfn.r43 )
         setjmp                              NOT NEEDED
@@ -591,7 +591,7 @@ menu                  596    227           576
 motor_control
   + shared                            2
 ports                 216            26
-prgm_control           72      2            85
+prgm_control           96      2            85
 switch                 58             2
   + common             66
 system                  4
@@ -602,7 +602,7 @@ timersB2              136      2     14
 N/A (command line)           160
 N/A (alignment)
 ----------          -----    ---     --    ---
-Total:              2 158    421     92    695
+Total:              2 182    421     92    695
   + common             94
 
 
@@ -647,7 +647,7 @@ DATA16_C                               C200 - C3D5             1D6   rel    0
 DATA16_ID                              C3D6 - C4B6              E1   rel    1
 CSTART                                 C4B8 - C4DF              28   rel    1
 ISR_CODE                               C4E0 - C5ED             10E   rel    1
-<CODE> 1                               C5EE - CD23             736   rel    1
+<CODE> 1                               C5EE - CD3B             74E   rel    1
 INTVEC                                 FF90 - FFED              5E   com    1
 RESET                                  FFFE - FFFF               2   rel    1
 
@@ -657,7 +657,7 @@ RESET                                  FFFE - FFFF               2   rel    1
                 *                                      *
                 ****************************************
 
- 2 252 bytes of CODE  memory
+ 2 276 bytes of CODE  memory
    421 bytes of DATA  memory (+ 92 absolute )
    695 bytes of CONST memory
 

@@ -21,19 +21,23 @@ void Control_Process(void)
 	{
 		case 0:
 					//	"0123456789abcdef"
-			display_1 = " Resistor Codes ";     
+			display_1 = " Resistor Codes ";  
+                        display_2 = "                ";
 			break;
 		case 1: 
 					//	"0123456789abcdef"
 			display_1 = "     Shapes     ";
+                        display_2 = "                ";
 			break;
 		case 2:
 					//	"0123456789abcdef"
 			display_1 = "      Song      ";
+                        display_2 = "                ";
 			break;
 		default:
 					//	"0123456789abcdef"
 			display_1 = "  OUT OF RANGE  ";
+                        display_2 = "                ";
 			break;
 	}
 }

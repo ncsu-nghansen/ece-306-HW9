@@ -1,6 +1,6 @@
 ###############################################################################
 #                                                                             #
-# IAR C/C++ Compiler V5.60.5.50814/W32 for MSP430       04/Apr/2014  00:03:51 #
+# IAR C/C++ Compiler V5.60.5.50814/W32 for MSP430       04/Apr/2014  00:29:49 #
 # Copyright 1996-2013 IAR Systems AB.                                         #
 #                                                                             #
 #    __rt_version  =  3                                                       #
@@ -96,41 +96,49 @@ C:\Users\Nathan\Documents\GitHub\ece-306-HW9\prgm_control.c
    \   00001A   0F83         SUB.W   #0x0, R15
    \   00001C   0524         JEQ     ??Control_Process_0
    \   00001E   1F83         SUB.W   #0x1, R15
-   \   000020   0724         JEQ     ??Control_Process_1
+   \   000020   0A24         JEQ     ??Control_Process_1
    \   000022   1F83         SUB.W   #0x1, R15
-   \   000024   0924         JEQ     ??Control_Process_2
-   \   000026   0C3C         JMP     ??Control_Process_3
+   \   000024   0F24         JEQ     ??Control_Process_2
+   \   000026   153C         JMP     ??Control_Process_3
      21          	{
      22          		case 0:
      23          					//	"0123456789abcdef"
-     24          			display_1 = " Resistor Codes ";     
+     24          			display_1 = " Resistor Codes ";  
    \                     ??Control_Process_0:
    \   000028   B240........ MOV.W   #`?<Constant " Resistor Codes ">`, &display_1
-     25          			break;
-   \   00002E   1001         RETA
-     26          		case 1: 
-     27          					//	"0123456789abcdef"
-     28          			display_1 = "     Shapes     ";
+     25                                  display_2 = "                ";
+   \   00002E   B240........ MOV.W   #`?<Constant "                ">`, &display_2
+     26          			break;
+   \   000034   1001         RETA
+     27          		case 1: 
+     28          					//	"0123456789abcdef"
+     29          			display_1 = "     Shapes     ";
    \                     ??Control_Process_1:
-   \   000030   B240........ MOV.W   #`?<Constant "     Shapes     ">`, &display_1
-     29          			break;
-   \   000036   1001         RETA
-     30          		case 2:
-     31          					//	"0123456789abcdef"
-     32          			display_1 = "      Song      ";
+   \   000036   B240........ MOV.W   #`?<Constant "     Shapes     ">`, &display_1
+     30                                  display_2 = "                ";
+   \   00003C   B240........ MOV.W   #`?<Constant "                ">`, &display_2
+     31          			break;
+   \   000042   1001         RETA
+     32          		case 2:
+     33          					//	"0123456789abcdef"
+     34          			display_1 = "      Song      ";
    \                     ??Control_Process_2:
-   \   000038   B240........ MOV.W   #`?<Constant "      Song      ">`, &display_1
-     33          			break;
-   \   00003E   1001         RETA
-     34          		default:
-     35          					//	"0123456789abcdef"
-     36          			display_1 = "  OUT OF RANGE  ";
+   \   000044   B240........ MOV.W   #`?<Constant "      Song      ">`, &display_1
+     35                                  display_2 = "                ";
+   \   00004A   B240........ MOV.W   #`?<Constant "                ">`, &display_2
+     36          			break;
+   \   000050   1001         RETA
+     37          		default:
+     38          					//	"0123456789abcdef"
+     39          			display_1 = "  OUT OF RANGE  ";
    \                     ??Control_Process_3:
-   \   000040   B240........ MOV.W   #`?<Constant "  OUT OF RANGE  ">`, &display_1
-     37          			break;
-     38          	}
-     39          }
-   \   000046   1001         RETA
+   \   000052   B240........ MOV.W   #`?<Constant "  OUT OF RANGE  ">`, &display_1
+     40                                  display_2 = "                ";
+   \   000058   B240........ MOV.W   #`?<Constant "                ">`, &display_2
+     41          			break;
+     42          	}
+     43          }
+   \   00005E   1001         RETA
 
    \                                 In  segment DATA16_ID, align 2, align-sorted
    \                     `?<Initializer for OldState>`:
@@ -193,7 +201,7 @@ C:\Users\Nathan\Documents\GitHub\ece-306-HW9\prgm_control.c
        1  ?<Initializer for IsLight>
        2  ?<Initializer for OldState>
        1  ?<Initializer for WasLight>
-      72  Control_Process
+      96  Control_Process
        1  IsLight
        2  LeftMotorPower
        2  OldState
@@ -202,13 +210,13 @@ C:\Users\Nathan\Documents\GitHub\ece-306-HW9\prgm_control.c
        1  WasLight
 
  
- 72 bytes in segment CODE
+ 96 bytes in segment CODE
  85 bytes in segment DATA16_C
   4 bytes in segment DATA16_I
   4 bytes in segment DATA16_ID
   6 bytes in segment DATA16_Z
  
- 72 bytes of CODE  memory
+ 96 bytes of CODE  memory
  89 bytes of CONST memory
  10 bytes of DATA  memory
 
